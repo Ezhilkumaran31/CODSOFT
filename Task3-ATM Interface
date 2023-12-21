@@ -18,7 +18,6 @@ public class ATM {
     public void performTransaction(int choice, Scanner scanner) {
         switch (choice) {
             case 1:
-                // Withdraw
                 System.out.print("Enter the amount to withdraw: ");
                 double withdrawAmount = scanner.nextDouble();
                 if (withdrawAmount > 0) {
@@ -29,7 +28,6 @@ public class ATM {
                 break;
 
             case 2:
-                // Deposit
                 System.out.print("Enter the amount to deposit: ");
                 double depositAmount = scanner.nextDouble();
                 if (depositAmount > 0) {
@@ -46,7 +44,6 @@ public class ATM {
                 break;
 
             case 4:
-                // Exit
                 System.out.println("Thank you for using the ATM. Goodbye!");
                 System.exit(0);
                 break;
@@ -71,19 +68,13 @@ public class ATM {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // Initialize the ATM with an initial balance
         ATM atm = new ATM(1000.0);
 
         while (true) {
-            // Display the ATM menu
             atm.displayMenu();
 
-            // Get user choice
             System.out.print("Enter your choice (1-4): ");
             int choice = scanner.nextInt();
-
-            // Perform the selected transaction
             atm.performTransaction(choice, scanner);
         }
     }
